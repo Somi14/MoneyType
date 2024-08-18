@@ -23,7 +23,7 @@ function randomWord()
 }
 function formatWord(word) {
     return `<div class="word"><span class="letter">${word.split('').join('</span><span class="letter">')}</span></div>`;
-  }
+}
 
   
 function newGame()
@@ -44,7 +44,7 @@ function newGame()
 
     window.timer=null;
 
-  }
+}
 
 
   function getWpm()
@@ -84,7 +84,7 @@ document.getElementById('game').addEventListener('keyup', ev=>{
     const currentWord = document.querySelector('.word.current');
     const currentLetter=document.querySelector('.letter.current')
     const expected=currentLetter?.innerHTML || ' ';
-    const isLetter=key.length===1 && key!=' ';
+    const isLetter=key.length===1 && key!=' ';//isLetter is true if key.len==1 and key!=' '
     const isSpace=key===' ';
     const isBackspace=key==='Backspace';  
     const isFirstLetter=currentLetter===currentWord.firstChild;
@@ -190,8 +190,8 @@ document.getElementById('game').addEventListener('keyup', ev=>{
       const nextLetter = document.querySelector('.letter.current');
       const nextWord = document.querySelector('.word.current');
       const cursor = document.getElementById('cursor');
-      cursor.style.top = (nextLetter || nextWord).getBoundingClientRect().top + 2 + 'px';
-      cursor.style.left = (nextLetter || nextWord).getBoundingClientRect()[nextLetter ? 'left' : 'right'] + 2+'px';
+      cursor.style.top = (nextLetter || nextWord).getBoundingClientRect().top+2+ 'px';
+      cursor.style.left = (nextLetter || nextWord).getBoundingClientRect()[nextLetter ? 'left' : 'right'] +'px';
     
 })
 
